@@ -1,0 +1,27 @@
+{
+  "name": "factory-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A tiny to-do CLI used to prove a personal software factory: Claude Code works issues into PRs on a schedule.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --dir src",
+    "test:factory": "node --test scripts/factory/",
+    "check": "npm run typecheck && npm run lint && npm test && npm run test:factory"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.1.0"
+  }
+}

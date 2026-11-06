@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+.factory-tmp/
+todos.json
+.env
+.env.*
+.claude/settings.local.json
