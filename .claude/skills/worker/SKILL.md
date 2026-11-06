@@ -30,7 +30,7 @@ Park if "done" is not checkable: a bug needs steps, expected and actual; anythin
 
 - If the newest comment ending in `Branch: <name>` points to a branch that still exists (`git ls-remote --heads origin <name>`), continue it: `git switch --detach origin/<name>`, then `git rebase origin/main`, then `git push --force-with-lease origin HEAD:<name>`. This is the only force push you are allowed.
 - Otherwise: `git switch --detach origin/main`, and use the branch name `factory/N-<short-slug>`.
-- Push with `git push origin HEAD:<branch>`.
+- Push with `git push origin HEAD:refs/heads/<branch>`. A detached HEAD needs the full ref name to create a new remote branch.
 
 ## 3. Work
 
