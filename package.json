@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run --dir src",
-    "test:factory": "node --test scripts/factory/",
+    "test:factory": "node --test scripts/factory/next-step.test.mjs",
     "check": "npm run typecheck && npm run lint && npm test && npm run test:factory"
   },
   "engines": {
