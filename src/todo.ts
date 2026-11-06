@@ -18,7 +18,7 @@ export const parseId = (text: string): number => {
   return Number(text)
 }
 
-export const completeTodo =(todos: readonly Todo[], id: number): Todo[] => {
+export const completeTodo = (todos: readonly Todo[], id: number): Todo[] => {
   if (!todos.some((t) => t.id === id)) throw new Error(`No to-do with id ${id}.`)
   return todos.map((t) => (t.id === id ? { ...t, done: true } : t))
 }
