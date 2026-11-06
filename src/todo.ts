@@ -13,7 +13,12 @@ export const addTodo = (todos: readonly Todo[], text: string): Todo[] => {
   return [...todos, { id, text: trimmed, done: false }]
 }
 
-export const completeTodo = (todos: readonly Todo[], id: number): Todo[] => {
+export const parseId = (text: string): number => {
+  if (!/^\d+$/.test(text)) throw new Error(`Id must be a whole number, got "${text}".`)
+  return Number(text)
+}
+
+export const completeTodo =(todos: readonly Todo[], id: number): Todo[] => {
   if (!todos.some((t) => t.id === id)) throw new Error(`No to-do with id ${id}.`)
   return todos.map((t) => (t.id === id ? { ...t, done: true } : t))
 }
